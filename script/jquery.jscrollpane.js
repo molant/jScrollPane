@@ -1101,6 +1101,7 @@
 						moved = false;
 						moving = true;
                     console.log("mspointerdown");
+                    touch.preventMouseEvent();
 					}   
                 ).bind(
 					'touchmove.jsp',
@@ -1124,6 +1125,7 @@
                     function(ev)
 					{
                         console.log("mspointermove");
+                        ev.originalEvent.preventMouseEvent();
 						if(!moving) {
 							return;
 						}
@@ -1151,11 +1153,13 @@
 					'MSPointerUp.jsp',
 					function(e)
 					{
-						console.log("mspointerup");
+						e.originalEvent.preventMouseEvent();
+                        console.log("mspointerup");
                         moving = false;
 						/*if(moved) {
 							return false;
 						}*/
+                        e.event
 					}
 				).bind(
 					'click.jsp-touchclick',
