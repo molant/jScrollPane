@@ -1120,9 +1120,10 @@
 						// return true if there was no movement so rest of screen can scroll
 						return dX == horizontalDragPosition && dY == verticalDragPosition;
 					}
-				).bind('MSTouchMove.jsp',
+				).bind('MSPointerMove.jsp',
                     function(ev)
 					{
+                        console.log("mspointermove");
 						if(!moving) {
 							return;
 						}
@@ -1150,7 +1151,8 @@
 					'MSPointerUp.jsp',
 					function(e)
 					{
-						moving = false;
+						console.log("mspointerup");
+                        moving = false;
 						/*if(moved) {
 							return false;
 						}*/
