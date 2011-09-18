@@ -1100,6 +1100,7 @@
 						touchStartY = touch.pageY;
 						moved = false;
 						moving = true;
+                    console.log("mspointerdown");
 					}   
                 ).bind(
 					'touchmove.jsp',
